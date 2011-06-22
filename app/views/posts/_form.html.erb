@@ -1,0 +1,15 @@
+<% form_for @post, :html => { :class => 'form' } do |f| %>
+  <%= error_messages_for :post %>
+  <div class="fields">
+    <%= f.label :title %>
+    <br/>
+    <%= f.text_field :title, :class => 'text' %>
+  </div>
+  <div class="fields">
+    <%= f.label :content %>
+    <br/>
+    <%= f.text_area :content, :class => 'text' %>
+  </div>
+  <br/>
+  <%= f.submit "Save", :class => 'submit' %>
+<% end %>

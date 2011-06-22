@@ -1,0 +1,151 @@
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kevin/rails_project/demo_ha/demo/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 08:11:35 +0700
+  Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 80ms
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-06-22 08:11:35 +0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_menu.html.erb (1.3ms)
+Rendered sessions/new.html.erb within layouts/application (137.1ms)
+Completed 200 OK in 146ms (Views: 145.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-06-22 08:11:46 +0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ygXyDXjcFeajee/2e4SvImus9PN3ijGvAurpBGZUUro=", "session"=>{"email"=>"kevin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (12.6ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`email` = 'kevin@gmail.com') LIMIT 1
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 156ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-06-22 08:11:46 +0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE (`posts`.user_id = 1)[0m
+Rendered layouts/_menu.html.erb (1.8ms)
+Rendered users/show.html.erb within layouts/application (115.3ms)
+Completed 200 OK in 130ms (Views: 120.4ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 08:11:55 +0700
+  Processing by PostsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (2.1ms)
+Rendered posts/index.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 93ms (Views: 48.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-06-22 08:11:56 +0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+Rendered layouts/_menu.html.erb (1.7ms)
+Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 22ms (Views: 13.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-06-22 08:11:58 +0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE (`posts`.user_id = 1)
+Rendered layouts/_menu.html.erb (3.7ms)
+Rendered users/show.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 70ms (Views: 62.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-06-22 08:11:59 +0700
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-06-22 08:11:59 +0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_menu.html.erb (1.4ms)
+Rendered sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kevin/rails_project/demo_ha/demo/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 08:28:57 +0700
+  Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 67ms
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-06-22 08:28:57 +0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_menu.html.erb (1.4ms)
+Rendered sessions/new.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-06-22 08:29:00 +0700
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users__form_html_erb__771300421_84636460_355716222 at /home/kevin/rails_project/demo_ha/demo/app/views/users/_form.html.erb:1)
+Rendered users/_form.html.erb (37.6ms)
+Rendered layouts/_menu.html.erb (1.3ms)
+Rendered users/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-06-22 08:29:18 +0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ygXyDXjcFeajee/2e4SvImus9PN3ijGvAurpBGZUUro=", "user"=>{"name"=>"Kevin", "email"=>"kevin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'kevin@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users__form_html_erb__771300421_91567800_355716222 at /home/kevin/rails_project/demo_ha/demo/app/views/users/_form.html.erb:1)
+Rendered users/_form.html.erb (7.2ms)
+Rendered layouts/_menu.html.erb (1.0ms)
+Rendered users/new.html.erb within layouts/application (12.6ms)
+Completed 422 Unprocessable Entity in 99ms (Views: 18.2ms | ActiveRecord: 2.2ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/kevin/rails_project/rails3demo/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 09:36:20 +0700
+  Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 66ms
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-06-22 09:36:20 +0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_menu.html.erb (1.4ms)
+Rendered sessions/new.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 74ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-06-22 09:36:31 +0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ygXyDXjcFeajee/2e4SvImus9PN3ijGvAurpBGZUUro=", "session"=>{"email"=>"kevin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`email` = 'kevin@gmail.com') LIMIT 1
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 61ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-06-22 09:36:31 +0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE (`posts`.user_id = 1)[0m
+Rendered layouts/_menu.html.erb (2.0ms)
+Rendered users/show.html.erb within layouts/application (82.2ms)
+Completed 200 OK in 96ms (Views: 87.6ms | ActiveRecord: 0.9ms)

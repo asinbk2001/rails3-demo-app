@@ -1,0 +1,17 @@
+<% page_title("List of Users") %>
+<%- unless flash[:error].nil? -%>
+  <div class="error"><%= flash[:error] %></div>
+<%- end -%>
+<h2>List of Users</h2>
+<table width="100%">
+  <tr>
+    <td>Name</td>
+    <td>Email</td>
+  </tr>
+  <%- current_objects.each do |u| -%>
+    <tr>
+      <td width="50%"><%= link_to u.name, u %></td>
+      <td><%= u.email %></td>
+    </tr>
+  <%- end -%>
+</table>

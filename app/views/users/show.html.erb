@@ -1,0 +1,23 @@
+<% page_title("User #{current_object.name}") %>
+<h2>Account Information</h2>
+Name: <%= current_object.name %>
+<br/>
+Email: <%= current_object.email %>
+<br/>
+<br/>
+<%= link_to 'Edit', edit_user_path(current_object) %>
+<br/>
+<h3>Posts</h3>
+<table width="100%">
+  <tr>
+    <td>Title</td>
+    <td>Content</td>
+  </tr>
+  <%- current_object.posts.each do |p| -%>
+    <tr>
+      <td width="20%"><%= link_to p.title, p %></td>
+      <td><%= p.content %></td>
+    </tr>
+  <%- end -%>
+</table>
+<br/>

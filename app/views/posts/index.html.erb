@@ -1,0 +1,21 @@
+<% page_title("List of Posts") %>
+<%- unless flash[:error].nil? -%>
+  <div class="error"><%= flash[:error] %></div>
+<%- end -%>
+<h2>List of Posts</h2>
+<table width="100%">
+  <tr>
+    <td>Title</td>
+    <td>Posted by</td>
+    <td>Content</td>
+  </tr>
+  <%- current_objects.each do |p| -%>
+    <tr>
+      <td width="20%"><%= link_to p.title, p %></td>
+      <td width="20%"><%= link_to p.user.name, p.user %></td>
+      <td><%= p.content %></td>
+    </tr>
+  <%- end -%>
+</table>
+<br/>
+<%= link_to 'New Post', new_post_path %>

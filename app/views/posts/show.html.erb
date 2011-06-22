@@ -1,0 +1,26 @@
+<% page_title("Post") %>
+<h2>Post Detail</h2>
+<table width="100%">
+  <tr>
+    <td width="10%">Title:</td>
+    <td><%=h current_object.title %></td>
+  </tr>
+  <tr>
+    <td>Content:</td>
+    <td><%=h current_object.content %></td>
+  </tr>
+  <tr>
+    <td>By:</td>
+    <td><%= link_to current_object.user.name, current_object.user %></td>
+  </tr>
+  <tr>
+    <td>On:</td>
+    <td><%= current_object.created_at %></td>
+  </tr>
+</table>
+<br/>
+<%= link_to 'Edit', edit_post_path(current_object) %>
+<br/>
+<%= link_to 'Delete', post_path(current_object), :method => :delete, :confirm => 'Are you sure' %>
+<br/>
+<%= link_to 'New Post', new_post_path %>
