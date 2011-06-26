@@ -819,3 +819,52 @@ Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 5.0ms)
   [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
   [1m[35mSQL (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'example@example.com') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('Your name', 'example@example.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '2011-06-26 17:09:49', '2011-06-26 17:09:49')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (45.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'example@example.com') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'testemail') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'example@example.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.`id` FROM `users` WHERE (`users`.`email` = BINARY 'hoanganhdoan2003@yahoo.com') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('Hoang Anh', 'hoanganhdoan2003@yahoo.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '2011-06-26 17:11:01', '2011-06-26 17:11:01')
+  [1m[36mSQL (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>1}
+Redirected to http://test.host/signin
+Completed 302 Found in 15ms
+  [1m[35mSQL (49.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by SessionsController#new as HTML
+Rendered layouts/_menu.html.erb (28.4ms)
+Completed 200 OK in 79ms (Views: 77.8ms | ActiveRecord: 52.8ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by SessionsController#new as HTML
+Rendered layouts/_menu.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK

@@ -1,27 +1,28 @@
-<% form_for @user, :html => { :class => 'form' } do |f| -%>
+<% form_for (@user) do |f| -%>
   <%= error_messages_for :user %>
   <div class="fields">
     <%= f.label :name %>
     <br/>
-    <%= f.text_field :name, :class => 'text' %>
+    <%= f.text_field :name %>
   </div>
   <div class="fields">
     <%= f.label :email %>
     <br/>
-    <%= f.text_field :email, :class => 'text' %>
+    <%= f.text_field :email %>
   </div>
   <div class="fields">
     <%= f.label :password %>
     <br/>
-    <%= f.password_field :password, :class => 'text' %>
+    <%= f.password_field :password %>
   </div>
   <div class="fields">
-    <%= f.label :password_confirmation %>
+	<%= f.label :password_confirmation %>
     <br/>
-    <%= f.password_field :password_confirmation, :class => 'text' %>
+    <%= f.password_field :password_confirmation %>
   </div>
-  <%= f.submit "Submit", :class => 'submit' %> 
+  <%= f.submit "Submit" %> 
   <%- unless sign_in? -%>
     or <%= link_to 'Sign In', signin_path %>
   <%- end -%>
 <%- end -%>
+  

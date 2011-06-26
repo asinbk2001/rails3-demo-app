@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(:version => 20110619035337) do
   add_index "posts", ["user_id"], :name => "idx_posts_by_user"
 
   create_table "users", :force => true do |t|
-    t.string "name",               :limit => 64, :null => false
-    t.string "email",                            :null => false
-    t.string "encrypted_password"
+    t.string   "name",               :limit => 64, :null => false
+    t.string   "email",                            :null => false
+    t.string   "encrypted_password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

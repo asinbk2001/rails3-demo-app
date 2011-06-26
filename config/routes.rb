@@ -5,8 +5,8 @@ Demo::Application.routes.draw do |map|
 
   map.home '/', :controller => 'users', :action => 'index'
   match '/signup', :to => 'users#new'
-  match '/signin', :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
+  match '/signin', :to => 'sessions#new'  #chinh la signin_path trong file .rb, no se link den sessions/new, no se show page trong file views/sessiongs/new.html.erb
+  match '/signout', :to => 'sessions#destroy' #chinh la signout_path trong file .rb, no se call ham destroy ==> call ham signout trong sessions_helper va sau do redirect den signin_path
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
