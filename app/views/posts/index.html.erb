@@ -9,7 +9,7 @@
     <td>Posted by</td>
     <td>Content</td>
   </tr>
-  <%- current_objects.each do |p| -%>
+  <%- current_objects.each do |p| -%> <!-- #current_objects o day lai la array chua tat ca cac posts -->
     <tr>
       <td width="20%"><%= link_to p.title, p %></td>
       <td width="20%"><%= link_to p.user.name, p.user %></td>

@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate_with_email(id, cookie_email)
     user = find(id) rescue nil
-    user && user.email == cookie_email ? user : nil
+    user && user.email == cookie_email ? user : nil #neu ko dung keyword return thi gia tri tra ve se la gia tri cuoi cung cua ham (o day la user hoac nil)
   end
 
   private

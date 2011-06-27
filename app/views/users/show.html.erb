@@ -1,11 +1,11 @@
 <% page_title("User #{current_object.name}") %>
 <h2>Account Information</h2>
-Name: <%= current_object.name %>
+Name: <%= current_object.name %> <!--#current_object la object duoc xac dinh = 1 id. no sinh trong UserController bang cach goi User.find(params[:id]) -->
+<br/>					<!-- #current_object la bien instance, no duoc luu trong caches nen ko can thiet phai query nheiu lan. -->
+Email: <%= current_object.email %> <!-- #current_object o day chinh la gia tri tra ve cua ham User.find(params[:id]) va dc luu trong caches -->
 <br/>
-Email: <%= current_object.email %>
 <br/>
-<br/>
-<%= link_to 'Edit', edit_user_path(current_object) %>
+<%= link_to 'Edit', edit_user_path(current_object) %> <!-- #goi controller thuc hien tac vu edit current_object -->
 <br/>
 <h3>Posts</h3>
 <table width="100%">
@@ -13,9 +13,9 @@ Email: <%= current_object.email %>
     <td>Title</td>
     <td>Content</td>
   </tr>
-  <%- current_object.posts.each do |p| -%>
-    <tr>
-      <td width="20%"><%= link_to p.title, p %></td>
+<%- current_object.posts.each do |p| -%>  <!-- #current_object.posts chinh la array cac posts thuoc ve current_object nay (ko fai all posts). vi quan he la user has_many posts -->
+<tr>																		<!-- #nhu vay 1 user da duoc lay tu db len (bao gom ca cac thuoc tinh va cac objects quan he voi no) va luu toan bo cac thuoc tinh lien quan vao	current_object -->		
+<td width="20%"><%= link_to p.title, p %></td> <!-- #day chinh la 1 dang lazy-load trong cac framework lam viec voi db nhu Nhibernat, Hibernate -->
       <td><%= p.content %></td>
     </tr>
   <%- end -%>

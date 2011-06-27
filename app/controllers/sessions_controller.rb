@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:session][:email], params[:session][:password])
+	user = User.authenticate(params[:session][:email], params[:session][:password]) #call User class method
     if user.nil?
       flash[:error] = "Invalid email/account."
       render :new # tiep tuc call ham new session de yeu cau signin

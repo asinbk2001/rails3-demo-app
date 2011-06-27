@@ -8,8 +8,8 @@
     <td>Name</td>
     <td>Email</td>
   </tr>
-  <%- current_objects.each do |u| -%>
-    <tr>
+  <%- current_objects.each do |u| -%>  <!-- #array chua tat ca cac phan tu cua User, dc sinh ra = goi ham cua UserModel la User.find(:all) -->
+	<tr>									<!-- #no cung duoc luu trong caches, ko fai query nhieu lan -->
       <td width="50%"><%= link_to u.name, u %></td>
       <td><%= u.email %></td>
     </tr>

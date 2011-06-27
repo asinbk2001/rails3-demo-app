@@ -3,8 +3,8 @@ Demo::Application.routes.draw do |map|
   resources :posts
   resources :sessions, :only => [:new, :create, :destroy]
 
-  map.home '/', :controller => 'users', :action => 'index'
-  match '/signup', :to => 'users#new'
+map.home '/', :controller => 'users', :action => 'index' #user ma default path cua object la index cua no
+  match '/signup', :to => 'users#new'  #signup_path
   match '/signin', :to => 'sessions#new'  #chinh la signin_path trong file .rb, no se link den sessions/new, no se show page trong file views/sessiongs/new.html.erb
   match '/signout', :to => 'sessions#destroy' #chinh la signout_path trong file .rb, no se call ham destroy ==> call ham signout trong sessions_helper va sau do redirect den signin_path
 

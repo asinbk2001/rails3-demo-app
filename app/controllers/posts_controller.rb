@@ -6,9 +6,9 @@ class PostsController < ApplicationController
     actions :all
 
     before :create do
-      current_object.user_id = current_user.id
-    end
-  end
+		current_object.user_id = current_user.id	#gan gia tri cho user_id cua post, user_id la khoa ngoai cho cac posts
+    end				#current_user la bien cua session_helper ma session_helper la 1 module, no dc include vao ApplicationController
+		end					#vi vay tat ca cac controller ke thuc no, deu chua cac bien cua session_helper
   
   private
 
